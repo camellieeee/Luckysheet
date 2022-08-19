@@ -596,12 +596,12 @@ export function keyboardInitial(){
                     }
 
                     if(Store.luckysheet_select_save.length > 1){
-                        if(isEditMode()){
-                            alert(locale_drag.noPaste);
-                        }
-                        else{
-                            tooltip.info(locale_drag.noPaste, "");
-                        }
+                        // if(isEditMode()){
+                        //     alert(locale_drag.noPaste);
+                        // }
+                        // else{
+                        //     tooltip.info(locale_drag.noPaste, "");
+                        // }
                         return;
                     }
 
