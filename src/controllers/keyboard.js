@@ -602,7 +602,7 @@ export function keyboardInitial(){
                         // else{
                         //     tooltip.info(locale_drag.noPaste, "");
                         // }
-                        return;
+                        // return;
                     }
 
                     selection.isPasteAction = true;
