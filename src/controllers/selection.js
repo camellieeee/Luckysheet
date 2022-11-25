@@ -1384,8 +1384,45 @@ const selection = {
 
         let copyh = copyData.length, copyc = copyData[0].length;
 
-        //应用范围
-        let last = Store.luckysheet_select_save[Store.luckysheet_select_save.length - 1];
+        // 应用范围
+        // let last = Store.luckysheet_select_save[Store.luckysheet_select_save.length - 1];
+
+        for (const last of Store.luckysheet_select_save) {
+            this.customerPasteContent({
+                locale_paste,
+                copyHasMC,
+                copyRowlChange,
+                copySheetIndex,
+                cfg,
+                copyData,
+                copyh,
+                copyc,
+                last,
+                c_r1,
+                c_r2,
+                c_c1,
+                c_c2,
+                copyRange
+            })
+        }
+    },
+
+    customerPasteContent: function({
+        locale_paste,
+        copyHasMC,
+        copyRowlChange,
+        copySheetIndex,
+        cfg,
+        copyData,
+        copyh,
+        copyc,
+        last,
+        c_r1,
+        c_r2,
+        c_c1,
+        c_c2,
+        copyRange
+    }) { // by mo_fei 2022-08-19
         let minh = last["row"][0], maxh = last["row"][1];         //应用范围首尾行
         let minc = last["column"][0], maxc = last["column"][1];   //应用范围首尾列
 
@@ -1636,6 +1673,7 @@ const selection = {
             selectHightlightShow();
         }
     },
+
     pasteHandlerOfPaintModel: function(copyRange){
         if(!checkProtectionLockedRangeList(Store.luckysheet_select_save, Store.currentSheetIndex)){
             return;
